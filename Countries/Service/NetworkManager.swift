@@ -9,7 +9,7 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
-    func fetchCountries(limit: Int = 10, onSuccess: @escaping (Countries?) -> Void, onError:  (Error) -> Void) {
+    func fetchCountries(limit: Int = 10, onSuccess: @escaping (Countries?) -> Void, onError: @escaping (Error) -> Void) {
         guard let url = NetworkEndPoint.countries.getURL()
         else {
             onError(NetworkServiceErrors.fetchFailed)
@@ -17,14 +17,11 @@ final class NetworkManager {
         }
         let parameters = [URLQueryItem(name: "limit", value: String(limit))]
         let request = url.createRequest(parameters: parameters)
-        NetworkService.shared.fetch(request: request) { (response:ResponseModel) in
+        NetworkService.shared.fetch(request: request) { (response:CountriesResponseModel) in
             onSuccess(response.data)
         } onError: { error in
             print(error)
+            onError(error)
         }
     }
 }
-
-
-
-

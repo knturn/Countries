@@ -22,14 +22,13 @@ extension NetworkService {
             let decoder = JSONDecoder()
             if let model = try? decoder.decode(T.self, from: data) {
                 onSuccess(model)
-            }
-            else {
+            } else {
                 onError(NetworkServiceErrors.parseFailed)
             }
         } .resume()
     }
 }
-public enum NetworkServiceErrors: Error {
+enum NetworkServiceErrors: Error {
     case fetchFailed
     case parseFailed
 }

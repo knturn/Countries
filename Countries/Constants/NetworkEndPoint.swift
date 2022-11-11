@@ -7,12 +7,20 @@
 
 import Foundation
 
-enum NetworkEndPoint: String {
-    case countries = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries"
-    case countriesDetail = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/code"
+fileprivate struct Urls {
+    static let countries = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries"
+    static let countriesDetail = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/"
+}
+enum NetworkEndPoint {
+    case countries
+    case countriesDetail (code: String)
     func getURL() -> URL? {
-        let url = URL(string: self.rawValue)
-        return url
+        switch self {
+        case .countriesDetail (let code):
+            return URL(string: Urls.countriesDetail + code)
+        case .countries:
+            return URL(string: Urls.countries)
+        }
     }
 }
 

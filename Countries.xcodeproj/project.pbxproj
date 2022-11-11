@@ -14,10 +14,15 @@
 		8C3CFD37291CF2EE00612B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3CFD35291CF2EE00612B62 /* LaunchScreen.storyboard */; };
 		8C3CFD4A291CFCE800612B62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD49291CFCE800612B62 /* NetworkManager.swift */; };
 		8C3CFD66291D1DAA00612B62 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD65291D1DAA00612B62 /* NetworkService.swift */; };
-		8C3CFD89291D287C00612B62 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD88291D287C00612B62 /* ResponseModel.swift */; };
+		8C3CFD89291D287C00612B62 /* CountriesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD88291D287C00612B62 /* CountriesResponseModel.swift */; };
 		8C3CFD8B291D2A0900612B62 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD8A291D2A0900612B62 /* Constant.swift */; };
 		8C3CFD8D291D2A2B00612B62 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD8C291D2A2B00612B62 /* NetworkEndPoint.swift */; };
-		8CD32BF9291D97FC00B0F836 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32BF8291D97FC00B0F836 /* URLExtensions.swift */; };
+		8CD32BFC291DAAE500B0F836 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD32BFB291DAAE500B0F836 /* SnapKit */; };
+		8CD32BFF291DABAE00B0F836 /* CountryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32BFE291DABAE00B0F836 /* CountryTVCell.swift */; };
+		8CD32C01291DAC5400B0F836 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C00291DAC5400B0F836 /* HomeViewModel.swift */; };
+		8CD32C04291E664D00B0F836 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C03291E664D00B0F836 /* DetailViewController.swift */; };
+		8CD32C06291E78BC00B0F836 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C05291E78BC00B0F836 /* StorageManager.swift */; };
+		8CD32C0C291EABE400B0F836 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C0B291EABE400B0F836 /* URLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +35,14 @@
 		8C3CFD38291CF2EE00612B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C3CFD49291CFCE800612B62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8C3CFD65291D1DAA00612B62 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		8C3CFD88291D287C00612B62 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		8C3CFD88291D287C00612B62 /* CountriesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponseModel.swift; sourceTree = "<group>"; };
 		8C3CFD8A291D2A0900612B62 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8C3CFD8C291D2A2B00612B62 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
-		8CD32BF8291D97FC00B0F836 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		8CD32BFE291DABAE00B0F836 /* CountryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTVCell.swift; sourceTree = "<group>"; };
+		8CD32C00291DAC5400B0F836 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8CD32C03291E664D00B0F836 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8CD32C05291E78BC00B0F836 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		8CD32C0B291EABE400B0F836 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD32BFC291DAAE500B0F836 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +76,7 @@
 		8C3CFD29291CF2EE00612B62 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				8CD32BFD291DAB9000B0F836 /* Custom Views */,
 				8C3CFD87291D286E00612B62 /* Models */,
 				8C3CFD48291CF7CC00612B62 /* Service */,
 				8C3CFD47291CF7C000612B62 /* Constants */,
@@ -82,6 +93,7 @@
 		8C3CFD44291CF79100612B62 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				8CD32C02291E662B00B0F836 /* Detail */,
 				8C3CFD4D291D021C00612B62 /* Home */,
 			);
 			path = Pages;
@@ -99,7 +111,7 @@
 		8C3CFD46291CF7B800612B62 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8CD32BF8291D97FC00B0F836 /* URLExtensions.swift */,
+				8CD32C0B291EABE400B0F836 /* URLExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +130,7 @@
 			children = (
 				8C3CFD65291D1DAA00612B62 /* NetworkService.swift */,
 				8C3CFD49291CFCE800612B62 /* NetworkManager.swift */,
+				8CD32C05291E78BC00B0F836 /* StorageManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3CFD2E291CF2EE00612B62 /* HomeViewController.swift */,
+				8CD32C00291DAC5400B0F836 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -133,9 +147,25 @@
 		8C3CFD87291D286E00612B62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8C3CFD88291D287C00612B62 /* ResponseModel.swift */,
+				8C3CFD88291D287C00612B62 /* CountriesResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8CD32BFD291DAB9000B0F836 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CD32BFE291DABAE00B0F836 /* CountryTVCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		8CD32C02291E662B00B0F836 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8CD32C03291E664D00B0F836 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +185,7 @@
 			);
 			name = Countries;
 			packageProductDependencies = (
+				8CD32BFB291DAAE500B0F836 /* SnapKit */,
 			);
 			productName = Countries;
 			productReference = 8C3CFD27291CF2EE00612B62 /* Countries.app */;
@@ -185,6 +216,7 @@
 			);
 			mainGroup = 8C3CFD1E291CF2EE00612B62;
 			packageReferences = (
+				8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8C3CFD28291CF2EE00612B62 /* Products */;
 			projectDirPath = "";
@@ -213,14 +245,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3CFD8B291D2A0900612B62 /* Constant.swift in Sources */,
+				8CD32C01291DAC5400B0F836 /* HomeViewModel.swift in Sources */,
 				8C3CFD2F291CF2EE00612B62 /* HomeViewController.swift in Sources */,
+				8CD32C0C291EABE400B0F836 /* URLExtensions.swift in Sources */,
+				8CD32C04291E664D00B0F836 /* DetailViewController.swift in Sources */,
+				8CD32BFF291DABAE00B0F836 /* CountryTVCell.swift in Sources */,
 				8C3CFD4A291CFCE800612B62 /* NetworkManager.swift in Sources */,
 				8C3CFD8D291D2A2B00612B62 /* NetworkEndPoint.swift in Sources */,
-				8C3CFD89291D287C00612B62 /* ResponseModel.swift in Sources */,
-				8CD32BF9291D97FC00B0F836 /* URLExtensions.swift in Sources */,
+				8C3CFD89291D287C00612B62 /* CountriesResponseModel.swift in Sources */,
 				8C3CFD2B291CF2EE00612B62 /* AppDelegate.swift in Sources */,
 				8C3CFD2D291CF2EE00612B62 /* SceneDelegate.swift in Sources */,
 				8C3CFD66291D1DAA00612B62 /* NetworkService.swift in Sources */,
+				8CD32C06291E78BC00B0F836 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +399,8 @@
 				INFOPLIST_FILE = Countries/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,8 +428,8 @@
 				INFOPLIST_FILE = Countries/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CD32BFB291DAAE500B0F836 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C3CFD1F291CF2EE00612B62 /* Project object */;
 }
