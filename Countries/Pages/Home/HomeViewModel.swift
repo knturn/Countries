@@ -9,17 +9,18 @@ import Foundation
 
 class HomeViewModel {
     var countriesArray = Countries()
-    func fetchCountries(completion: @escaping (Bool) -> Void) {
+    func fetchCountries(completion: @escaping (Result<Bool,Error>) -> Void) {
         NetworkManager.shared.fetchCountries { [weak self] countries in
             guard let self = self else {return}
             guard let countries = countries else {return}
             self.countriesArray = countries
-            completion(true)
+            completion(.success(true))
         } onError: { error in
             print(error)
-            completion(false)
+            completion(.failure(error))
         }
     }
+    
 }
 
 //MARK: EXTENSIONS

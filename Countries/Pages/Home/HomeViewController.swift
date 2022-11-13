@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 class HomeViewController: UIViewController {
-    let viewModel = HomeViewModel()
+    private let viewModel = HomeViewModel()
     // MARK: UI ELEMENT
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -21,33 +21,26 @@ class HomeViewController: UIViewController {
     // MARK: LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationTitle()
         view.backgroundColor = .white
         fetchCountries()
         configureSubViews()
     }
-    
-    // MARK: FUNCS
-    private func setNavigationTitle() {
-        let font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        let attributes = [NSAttributedString.Key.font: font]
-        navigationController?.navigationBar.titleTextAttributes = attributes
-        navigationItem.title = "Countries"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationTitle(title: "Countries")
+        tableView.reloadData()
     }
     
+    // MARK: FUNCS
     private func fetchCountries() {
         viewModel.fetchCountries() { [weak self] result in
             guard let self = self else{return}
-            if result {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else{return}
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
                     self.tableView.reloadData()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Alert", message: "Error happend while fetching countries. Try again", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                    self.present(alert, animated: true, completion: nil)
+                case .failure(let error):
+                    self.displayAlert(message: error.localizedDescription)
                 }
             }
         }
@@ -56,6 +49,14 @@ class HomeViewController: UIViewController {
     private func configureSubViews() {
         view.addSubview(tableView)
         makeConstraint()
+    }
+    
+    private func pushToDetailPage(indexPath: IndexPath) {
+        let countryCode = self.viewModel.getCountryTuple(indexpath: indexPath).code
+        let detailViewModel = DetailViewModel(countryCode: countryCode)
+        let vc = DetailViewController(viewModel: detailViewModel)
+        navigationItem.backButtonTitle = ""
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -72,10 +73,9 @@ extension HomeViewController: ConfigureToTableView {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        pushToDetailPage(indexPath: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }

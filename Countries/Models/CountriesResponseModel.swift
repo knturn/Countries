@@ -18,6 +18,7 @@ struct CountryModel: Codable {
     let name: String?
     let wikiDataId: String?
     let currencyCodes: Array<String>?
+    
     enum CodingKeys: String, CodingKey {
         case code
         case name

@@ -35,8 +35,8 @@ final class StorageManager {
     private func getSavedCountries() -> Set<String>  {
         let array =  userDefaults.value(forKey: Constant.savedCountryKeyUD) as? Array<String> ?? []
         return Set(array)
-        
     }
+    
     private func setSavedCountries(set: Set<String>) {
         let array = Array(set)
         userDefaults.set(array, forKey: Constant.savedCountryKeyUD)

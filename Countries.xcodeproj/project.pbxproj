@@ -23,6 +23,12 @@
 		8CD32C04291E664D00B0F836 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C03291E664D00B0F836 /* DetailViewController.swift */; };
 		8CD32C06291E78BC00B0F836 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C05291E78BC00B0F836 /* StorageManager.swift */; };
 		8CD32C0C291EABE400B0F836 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C0B291EABE400B0F836 /* URLExtensions.swift */; };
+		8CD32C10291EE4C400B0F836 /* CountryDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C0F291EE4C400B0F836 /* CountryDetailResponseModel.swift */; };
+		8CD32C12291EE55600B0F836 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C11291EE55600B0F836 /* DetailViewModel.swift */; };
+		8CD32C14291EF96000B0F836 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C13291EF96000B0F836 /* UIViewControllerExtensions.swift */; };
+		8CD32C18291F227000B0F836 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C17291F227000B0F836 /* UIImageViewExtensions.swift */; };
+		8CD32C1B291FAC2300B0F836 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD32C1A291FAC2300B0F836 /* SVGKit */; };
+		8CD32C27292075F400B0F836 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C26292075F400B0F836 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,11 @@
 		8CD32C03291E664D00B0F836 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CD32C05291E78BC00B0F836 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8CD32C0B291EABE400B0F836 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		8CD32C0F291EE4C400B0F836 /* CountryDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailResponseModel.swift; sourceTree = "<group>"; };
+		8CD32C11291EE55600B0F836 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8CD32C13291EF96000B0F836 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8CD32C17291F227000B0F836 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		8CD32C26292075F400B0F836 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD32C1B291FAC2300B0F836 /* SVGKit in Frameworks */,
 				8CD32BFC291DAAE500B0F836 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				8CD32C0B291EABE400B0F836 /* URLExtensions.swift */,
+				8CD32C13291EF96000B0F836 /* UIViewControllerExtensions.swift */,
+				8CD32C17291F227000B0F836 /* UIImageViewExtensions.swift */,
+				8CD32C26292075F400B0F836 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3CFD88291D287C00612B62 /* CountriesResponseModel.swift */,
+				8CD32C0F291EE4C400B0F836 /* CountryDetailResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				8CD32C03291E664D00B0F836 /* DetailViewController.swift */,
+				8CD32C11291EE55600B0F836 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -186,6 +203,7 @@
 			name = Countries;
 			packageProductDependencies = (
 				8CD32BFB291DAAE500B0F836 /* SnapKit */,
+				8CD32C1A291FAC2300B0F836 /* SVGKit */,
 			);
 			productName = Countries;
 			productReference = 8C3CFD27291CF2EE00612B62 /* Countries.app */;
@@ -217,6 +235,7 @@
 			mainGroup = 8C3CFD1E291CF2EE00612B62;
 			packageReferences = (
 				8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8CD32C19291FAC2300B0F836 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 8C3CFD28291CF2EE00612B62 /* Products */;
 			projectDirPath = "";
@@ -244,9 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD32C10291EE4C400B0F836 /* CountryDetailResponseModel.swift in Sources */,
 				8C3CFD8B291D2A0900612B62 /* Constant.swift in Sources */,
 				8CD32C01291DAC5400B0F836 /* HomeViewModel.swift in Sources */,
 				8C3CFD2F291CF2EE00612B62 /* HomeViewController.swift in Sources */,
+				8CD32C27292075F400B0F836 /* UIViewExtensions.swift in Sources */,
 				8CD32C0C291EABE400B0F836 /* URLExtensions.swift in Sources */,
 				8CD32C04291E664D00B0F836 /* DetailViewController.swift in Sources */,
 				8CD32BFF291DABAE00B0F836 /* CountryTVCell.swift in Sources */,
@@ -254,8 +275,11 @@
 				8C3CFD8D291D2A2B00612B62 /* NetworkEndPoint.swift in Sources */,
 				8C3CFD89291D287C00612B62 /* CountriesResponseModel.swift in Sources */,
 				8C3CFD2B291CF2EE00612B62 /* AppDelegate.swift in Sources */,
+				8CD32C18291F227000B0F836 /* UIImageViewExtensions.swift in Sources */,
+				8CD32C14291EF96000B0F836 /* UIViewControllerExtensions.swift in Sources */,
 				8C3CFD2D291CF2EE00612B62 /* SceneDelegate.swift in Sources */,
 				8C3CFD66291D1DAA00612B62 /* NetworkService.swift in Sources */,
+				8CD32C12291EE55600B0F836 /* DetailViewModel.swift in Sources */,
 				8CD32C06291E78BC00B0F836 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +502,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		8CD32C19291FAC2300B0F836 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +517,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8CD32C1A291FAC2300B0F836 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD32C19291FAC2300B0F836 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -24,4 +24,18 @@ final class NetworkManager {
             onError(error)
         }
     }
+    func fetchCountryDetail(code: String, onSuccess: @escaping (CountryDetailModel?) -> Void, onError: @escaping (Error) -> Void) {
+        guard let url = NetworkEndPoint.countriesDetail(code: code).getURL()
+        else {
+            onError(NetworkServiceErrors.fetchFailed)
+            return
+        }
+        let request = url.createRequest()
+        NetworkService.shared.fetch(request: request) { (response:CountryDetailResponseModel) in
+            onSuccess(response.data)
+        } onError: { error in
+            print(error)
+            onError(error)
+        }
+    }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class CountryTVCell: UITableViewCell {
     static let identifier: String = "CountryTVCell"
-    var code: String?
+    var country: Country?
     // MARK: UIELEMENTS
     private lazy var cellView: UIView = {
         let view = UIView()
@@ -35,7 +35,7 @@ class CountryTVCell: UITableViewCell {
         btn.tintColor = .black
         btn.contentMode = .scaleAspectFill
         btn.backgroundColor = .clear
-        btn.setImage(UIImage(systemName: "star"), for: .normal)
+        btn.setImage(CurrentFavState.notSaved.image, for: .normal)
         btn.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return btn
     }()
@@ -48,13 +48,13 @@ class CountryTVCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func didTapButton() {
-        guard let code = code else{return}
-        if StorageManager.shared.checkCountry(code: code) {
-            self.saveButton.setImage(UIImage(systemName: "star"), for: .normal)
-            StorageManager.shared.removeCountry(code: code)
+        guard let country = country else{return}
+        if StorageManager.shared.checkCountry(code: country.code) {
+            self.saveButton.setImage(CurrentFavState.notSaved.image, for: .normal)
+            StorageManager.shared.removeCountry(code: country.code)
         } else {
-            self.saveButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            StorageManager.shared.saveCountry(code: code)
+            self.saveButton.setImage(CurrentFavState.saved.image, for: .normal)
+            StorageManager.shared.saveCountry(code: country.code)
         }
     }
 }
@@ -65,12 +65,12 @@ extension CountryTVCell {
         makeConstraint()
     }
     func configureCell(with tupple: Country) {
+        self.country = tupple
         self.cellTitle.text = tupple.name
-        self.code = tupple.code
         if StorageManager.shared.checkCountry(code: tupple.code) {
-            saveButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            saveButton.setImage(CurrentFavState.saved.image, for: .normal)
         } else {
-            saveButton.setImage(UIImage(systemName: "star"), for: .normal)
+            saveButton.setImage(CurrentFavState.notSaved.image, for: .normal)
         }
     }
     
