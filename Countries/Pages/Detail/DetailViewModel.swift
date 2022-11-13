@@ -14,6 +14,7 @@ class DetailViewModel {
     init(countryCode: String) {
         self.countryCode = countryCode
     }
+    
     func fetchCountryDetails(completion: @escaping (Result<Bool,Error>) -> Void) {
         NetworkManager.shared.fetchCountryDetail(code: countryCode) { model in
             self.countryDetailModel = model
@@ -45,13 +46,15 @@ class DetailViewModel {
     }
     
     func didTapRightButton(completion: (CurrentFavState) -> Void) {
-        guard let code =  countryCode else{return}
-        if StorageManager.shared.checkCountry(code: code) {
+        guard let name = countryDetailModel?.name,
+              let code =  countryDetailModel?.code else{return}
+        let country: Country = (name: name, code: code)
+        if StorageManager.shared.checkCountry(code: country.code) {
             completion(.notSaved)
-            StorageManager.shared.removeCountry(code: code)
+            StorageManager.shared.removeCountry(country: country)
         } else {
             completion(.saved)
-            StorageManager.shared.saveCountry(code: code)
+            StorageManager.shared.saveCountry(country: country)
         }
     }
 }

@@ -11,7 +11,7 @@ struct Constant {
     static let hostString = "wft-geo-db.p.rapidapi.com"
     static let savedCountryKeyUD = "savedCountries"
     static let wikiDataURL = "https://www.wikidata.org/wiki/"
-    }
+}
 
 typealias Countries = [CountryModel]
 typealias ConfigureToTableView = UITableViewDelegate & UITableViewDataSource

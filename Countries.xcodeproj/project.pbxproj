@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C20771E29211EEC00378A06 /* SavedCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20771D29211EEC00378A06 /* SavedCountriesViewController.swift */; };
+		8C20772029211F0100378A06 /* SavedCountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20771F29211F0100378A06 /* SavedCountriesViewModel.swift */; };
+		8C207725292120A400378A06 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C207724292120A400378A06 /* TabbarViewController.swift */; };
 		8C3CFD2B291CF2EE00612B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD2A291CF2EE00612B62 /* AppDelegate.swift */; };
 		8C3CFD2D291CF2EE00612B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD2C291CF2EE00612B62 /* SceneDelegate.swift */; };
 		8C3CFD2F291CF2EE00612B62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CFD2E291CF2EE00612B62 /* HomeViewController.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C20771D29211EEC00378A06 /* SavedCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCountriesViewController.swift; sourceTree = "<group>"; };
+		8C20771F29211F0100378A06 /* SavedCountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCountriesViewModel.swift; sourceTree = "<group>"; };
+		8C207724292120A400378A06 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		8C3CFD27291CF2EE00612B62 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C3CFD2A291CF2EE00612B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C3CFD2C291CF2EE00612B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C20771C29211EC700378A06 /* SavedCountries */ = {
+			isa = PBXGroup;
+			children = (
+				8C20771D29211EEC00378A06 /* SavedCountriesViewController.swift */,
+				8C20771F29211F0100378A06 /* SavedCountriesViewModel.swift */,
+			);
+			path = SavedCountries;
+			sourceTree = "<group>";
+		};
+		8C2077232921204900378A06 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				8C207724292120A400378A06 /* TabbarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		8C3CFD1E291CF2EE00612B62 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +128,8 @@
 		8C3CFD44291CF79100612B62 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				8C2077232921204900378A06 /* Tabbar */,
+				8C20771C29211EC700378A06 /* SavedCountries */,
 				8CD32C02291E662B00B0F836 /* Detail */,
 				8C3CFD4D291D021C00612B62 /* Home */,
 			);
@@ -265,10 +290,12 @@
 			files = (
 				8CD32C10291EE4C400B0F836 /* CountryDetailResponseModel.swift in Sources */,
 				8C3CFD8B291D2A0900612B62 /* Constant.swift in Sources */,
+				8C207725292120A400378A06 /* TabbarViewController.swift in Sources */,
 				8CD32C01291DAC5400B0F836 /* HomeViewModel.swift in Sources */,
 				8C3CFD2F291CF2EE00612B62 /* HomeViewController.swift in Sources */,
 				8CD32C27292075F400B0F836 /* UIViewExtensions.swift in Sources */,
 				8CD32C0C291EABE400B0F836 /* URLExtensions.swift in Sources */,
+				8C20771E29211EEC00378A06 /* SavedCountriesViewController.swift in Sources */,
 				8CD32C04291E664D00B0F836 /* DetailViewController.swift in Sources */,
 				8CD32BFF291DABAE00B0F836 /* CountryTVCell.swift in Sources */,
 				8C3CFD4A291CFCE800612B62 /* NetworkManager.swift in Sources */,
@@ -277,6 +304,7 @@
 				8C3CFD2B291CF2EE00612B62 /* AppDelegate.swift in Sources */,
 				8CD32C18291F227000B0F836 /* UIImageViewExtensions.swift in Sources */,
 				8CD32C14291EF96000B0F836 /* UIViewControllerExtensions.swift in Sources */,
+				8C20772029211F0100378A06 /* SavedCountriesViewModel.swift in Sources */,
 				8C3CFD2D291CF2EE00612B62 /* SceneDelegate.swift in Sources */,
 				8C3CFD66291D1DAA00612B62 /* NetworkService.swift in Sources */,
 				8CD32C12291EE55600B0F836 /* DetailViewModel.swift in Sources */,

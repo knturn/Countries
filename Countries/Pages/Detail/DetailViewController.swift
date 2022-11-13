@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
         img.contentMode = .scaleAspectFit
         if let url = viewModel.getFlagURL() {
             img.showSpinner(this: spinner)
-            img.downloadsvg(from: url) { [weak self] in
+            img.downloadSvg(from: url) { [weak self] in
                 guard let self = self else {return}
                 self.spinner.stopAnimating()
             }

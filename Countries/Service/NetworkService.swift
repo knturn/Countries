@@ -28,6 +28,7 @@ extension NetworkService {
         } .resume()
     }
 }
+
 enum NetworkServiceErrors: Error {
     case fetchFailed
     case parseFailed

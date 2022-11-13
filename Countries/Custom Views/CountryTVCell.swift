@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol CountryTVCellDelegate: AnyObject {
+    func starTapped()
+}
+
 class CountryTVCell: UITableViewCell {
     static let identifier: String = "CountryTVCell"
+    weak var delegate: CountryTVCellDelegate?
     var country: Country?
     // MARK: UIELEMENTS
     private lazy var cellView: UIView = {
@@ -51,11 +56,12 @@ class CountryTVCell: UITableViewCell {
         guard let country = country else{return}
         if StorageManager.shared.checkCountry(code: country.code) {
             self.saveButton.setImage(CurrentFavState.notSaved.image, for: .normal)
-            StorageManager.shared.removeCountry(code: country.code)
+            StorageManager.shared.removeCountry(country: country)
         } else {
             self.saveButton.setImage(CurrentFavState.saved.image, for: .normal)
-            StorageManager.shared.saveCountry(code: country.code)
+            StorageManager.shared.saveCountry(country: country)
         }
+        delegate?.starTapped()
     }
 }
 // MARK: EXTENSİON

@@ -12,34 +12,43 @@ final class StorageManager {
     static let shared = StorageManager()
     private let userDefaults = UserDefaults.standard
     
-    func saveCountry(code: String) {
+    func saveCountry(country: Country) {
         var savedCountries = getSavedCountries()
-        savedCountries.insert(code)
+        savedCountries.insert([country.code: country.name])
         setSavedCountries(set: savedCountries)
     }
     
-    func removeCountry(code: String) {
+    func removeCountry(country: Country) {
         var savedCountries = getSavedCountries()
-        savedCountries.remove(code)
+        savedCountries.remove([country.code: country.name])
         setSavedCountries(set: savedCountries)
     }
     
     func checkCountry(code: String) -> Bool {
         let savedCountries = getSavedCountries()
         let isSaved = savedCountries.contains { element in
-            element == code
+            element[code] != nil
         }
         return isSaved
     }
     
-    private func getSavedCountries() -> Set<String>  {
-        let array =  userDefaults.value(forKey: Constant.savedCountryKeyUD) as? Array<String> ?? []
-        return Set(array)
+    func getAllSavedCountries() -> [Country] {
+        let countriesArray = Array(getSavedCountries())
+        let country = countriesArray.map { element in
+            guard let code = element.keys.first,
+                  let name = element.values.first else {return Country(name: "name", code: "code")}
+            return Country(name: name, code: code)
+        }
+        return country
     }
     
-    private func setSavedCountries(set: Set<String>) {
+    private func getSavedCountries() -> Set<Dictionary<String,String>>  {
+        let array =  userDefaults.value(forKey: Constant.savedCountryKeyUD) as? [Dictionary<String,String>] ?? []
+        return Set(array)
+        
+    }
+    private func setSavedCountries(set: Set<Dictionary<String,String>>) {
         let array = Array(set)
         userDefaults.set(array, forKey: Constant.savedCountryKeyUD)
     }
 }
-
