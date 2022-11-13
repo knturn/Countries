@@ -14,14 +14,16 @@ final class StorageManager {
     
     func saveCountry(country: Country) {
         var savedCountries = getSavedCountries()
-        savedCountries.insert([country.code: country.name])
-        setSavedCountries(set: savedCountries)
+        savedCountries.append([country.code: country.name])
+        setSavedCountries(array: savedCountries)
     }
     
     func removeCountry(country: Country) {
         var savedCountries = getSavedCountries()
-        savedCountries.remove([country.code: country.name])
-        setSavedCountries(set: savedCountries)
+        savedCountries.removeAll { element in
+            return element[country.code] != nil
+        }
+        setSavedCountries(array: savedCountries)
     }
     
     func checkCountry(code: String) -> Bool {
@@ -33,7 +35,7 @@ final class StorageManager {
     }
     
     func getAllSavedCountries() -> [Country] {
-        let countriesArray = Array(getSavedCountries())
+        let countriesArray = getSavedCountries()
         let country = countriesArray.compactMap { element -> Country? in
             guard let code = element.keys.first,
                   let name = element.values.first else {return nil}
@@ -42,13 +44,12 @@ final class StorageManager {
         return country
     }
     
-    private func getSavedCountries() -> Set<Dictionary<String,String>>  {
+    private func getSavedCountries() -> [Dictionary<String,String>]  {
         let array =  userDefaults.value(forKey: Constant.savedCountryKeyUD) as? [Dictionary<String,String>] ?? []
-        return Set(array)
+        return array
         
     }
-    private func setSavedCountries(set: Set<Dictionary<String,String>>) {
-        let array = Array(set)
+    private func setSavedCountries(array: [Dictionary<String,String>]) {
         userDefaults.set(array, forKey: Constant.savedCountryKeyUD)
     }
 }
