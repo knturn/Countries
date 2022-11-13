@@ -34,9 +34,9 @@ final class StorageManager {
     
     func getAllSavedCountries() -> [Country] {
         let countriesArray = Array(getSavedCountries())
-        let country = countriesArray.map { element in
+        let country = countriesArray.compactMap { element -> Country? in
             guard let code = element.keys.first,
-                  let name = element.values.first else {return Country(name: "name", code: "code")}
+                  let name = element.values.first else {return nil}
             return Country(name: name, code: code)
         }
         return country

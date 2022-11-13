@@ -16,7 +16,7 @@ final class NetworkManager {
             return
         }
         let parameters = [URLQueryItem(name: "limit", value: String(limit))]
-        let request = url.createRequest(parameters: parameters)
+        guard let request = url.createRequest(parameters: parameters) else {return}
         NetworkService.shared.fetch(request: request) { (response:CountriesResponseModel) in
             onSuccess(response.data)
         } onError: { error in
@@ -30,7 +30,7 @@ final class NetworkManager {
             onError(NetworkServiceErrors.fetchFailed)
             return
         }
-        let request = url.createRequest()
+        guard let request = url.createRequest() else {return}
         NetworkService.shared.fetch(request: request) { (response:CountryDetailResponseModel) in
             onSuccess(response.data)
         } onError: { error in

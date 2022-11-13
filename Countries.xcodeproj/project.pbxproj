@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		8CD32C18291F227000B0F836 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C17291F227000B0F836 /* UIImageViewExtensions.swift */; };
 		8CD32C1B291FAC2300B0F836 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD32C1A291FAC2300B0F836 /* SVGKit */; };
 		8CD32C27292075F400B0F836 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD32C26292075F400B0F836 /* UIViewExtensions.swift */; };
+		8CFFD31429216ABF00BDBC6E /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = 8CFFD31329216ABF00BDBC6E /* CocoaLumberjack */; };
+		8CFFD31629216ABF00BDBC6E /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CFFD31529216ABF00BDBC6E /* CocoaLumberjackSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFFD31429216ABF00BDBC6E /* CocoaLumberjack in Frameworks */,
 				8CD32C1B291FAC2300B0F836 /* SVGKit in Frameworks */,
+				8CFFD31629216ABF00BDBC6E /* CocoaLumberjackSwift in Frameworks */,
 				8CD32BFC291DAAE500B0F836 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +233,8 @@
 			packageProductDependencies = (
 				8CD32BFB291DAAE500B0F836 /* SnapKit */,
 				8CD32C1A291FAC2300B0F836 /* SVGKit */,
+				8CFFD31329216ABF00BDBC6E /* CocoaLumberjack */,
+				8CFFD31529216ABF00BDBC6E /* CocoaLumberjackSwift */,
 			);
 			productName = Countries;
 			productReference = 8C3CFD27291CF2EE00612B62 /* Countries.app */;
@@ -250,7 +256,7 @@
 				};
 			};
 			buildConfigurationList = 8C3CFD22291CF2EE00612B62 /* Build configuration list for PBXProject "Countries" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -261,6 +267,7 @@
 			packageReferences = (
 				8CD32BFA291DAAE500B0F836 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CD32C19291FAC2300B0F836 /* XCRemoteSwiftPackageReference "SVGKit" */,
+				8CFFD31229216ABF00BDBC6E /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
 			);
 			productRefGroup = 8C3CFD28291CF2EE00612B62 /* Products */;
 			projectDirPath = "";
@@ -376,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -430,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -538,6 +545,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		8CFFD31229216ABF00BDBC6E /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.7.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -550,6 +565,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8CD32C19291FAC2300B0F836 /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKit;
+		};
+		8CFFD31329216ABF00BDBC6E /* CocoaLumberjack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CFFD31229216ABF00BDBC6E /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjack;
+		};
+		8CFFD31529216ABF00BDBC6E /* CocoaLumberjackSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CFFD31229216ABF00BDBC6E /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
