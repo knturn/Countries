@@ -20,10 +20,7 @@ Data fetched from API with URLSession.
 
 
   
-## ScreenShots
-![Countries](https://user-images.githubusercontent.com/98889671/201540165-cd448e87-cfa6-4f4e-a232-7f45ad064e75.png)
-![SavedCountries Page](https://user-images.githubusercontent.com/98889671/201540191-caccd12f-26f5-43af-ae75-cfdf67cbb727.png)
-![DetailPage](https://user-images.githubusercontent.com/98889671/201540195-79ff686c-6778-411a-aac0-01cc971a488e.png)
+## ScreenRecord
 
 https://user-images.githubusercontent.com/98889671/201540127-362a0932-296a-44fd-afee-0f3db12e3bea.mp4
 
